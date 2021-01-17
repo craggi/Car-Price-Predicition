@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Predictor</title>
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+            <h2 class='container-heading'><span class='heading_first'>Car Price Predictor</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+    		</div>
+    </div>
+    <div class='prediction-area'>
+    <div class='div2'>
+        <form action="{{ url_for('predict')}}" method="post">
+            <input class="form-input" name="Year" type="text" placeholder=" Year eg. 2020 "><br>
+            <input class="form-input" name="Present_Price" type="text" placeholder=" What is the Showroom Price?(In lakhs) eg. 5.3 "><br>
+            <input class="form-input" name="Kms_Driven" type="text" placeholder="How Many Kilometers Drived? eg. 5000 "><br>
+            <input class="form-input" name="Owner" type="text" placeholder="How much owners previously had the car(0 or 1 or 3) ?"><br>
+             </select><br>
+                    <select class="form-input align-center" name="Fuel_Type_Petrol">
+                        <option value="none">--- Select the Fuel type ? ---</option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Diesel">CNG</option>
+                    </select><br>
+             </select><br>
+                    <select class="form-input align-center" name="Seller_Type_Individual">
+                        <option value="none">--- Are you A Dealer or Individual ---</option>
+                        <option value="Dealer">Dealer</option>
+                        <option value="Individual">Individual</option>
+                    </select><br>
+            </select><br>
+                    <select class="form-input align-center" name="Transmission_Mannual">
+                        <option value="none">--- Select Transmission type ---</option>
+                        <option value="Mannual">Manual Car</option>
+                        <option value="Automatic">Automatic Car</option>
+                    </select><br>
+                    <input type="submit" class="myButton" value="Calculate the Selling Price">
+        </form>
+    </div>
+</div>
+
+     <!-- Footer -->
+      <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/craggi"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/abhinandanmani/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Made with ❤️ by Abhinandan Mani.</p>
+       </div>
+
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            text-align: center;
+            height: 100%;
+            margin:0;
+            padding: 0px;
+        }
+        
+       html{
+	height: 100%;
+	margin: 0;
+}
+/*website Title*/
+
+.container{
+	color: #000000;
+    padding: 20px;
+	display: block;
+	text-align: center;
+}
+
+.container-heading{
+    margin: 0;
+}
+
+.heading_first{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 100;
+}
+
+.description p{
+    font-style: italic;
+    font-size: 12px;
+	font-weight: 100;
+    margin: 0;
+}
+/*Prediction Area*/
+
+.prediction-area{
+	position: relative;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 20px 40px;
+}
+    .form-input{
+	background-color: #E9E9E9;
+	width: 370px;
+	height: 30px;
+	border-radius: 3px;
+	border: 0;
+	text-align: center;
+	-webkit-box-shadow: inset 7px 3px 16px -10px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 7px 3px 16px -10px rgba(0,0,0,0.75);
+	box-shadow: inset 7px 3px 16px -10px rgba(0,0,0,0.75);
+	margin-bottom: 15px;
+}
+.div2, .results{
+	display: inline-block;
+	width: auto;
+	height: 429px;
+	text-align: center;
+}
+
+.align-center{
+	padding: 0 30px;
+}
+
+.myButton {
+	background-color:#0c0c0c;
+	border-radius: 5px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:7px 30px;
+	margin-top: 10px;
+	text-decoration:none;
+	transition: 0.5s ease-out;
+}
+
+.myButton:hover{
+	background-color: #E9E9E9;
+	color: #000000;
+	box-shadow: inset 7px 3px 16px -10px rgba(0,0,0,0.75);
+}
+
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+/* Footer */
+.footer{
+	background-color: #E9E9E9;
+	color: #000000;
+	padding: 12px;
+    text-align: center;
+}
+
+.contact-icon{
+	color: #000000;
+	padding: 7px;
+}
+
+.contact-icon:hover{
+	color: #a6a19a;
+}
+
+.footer-description{
+	margin: 0;
+	font-size: 12px;
+	font-weight: 100;
+}
+
+    </style>
+</body>
+
+</html>
